@@ -1,0 +1,194 @@
+﻿/* ============================================================
+   DIOR · Estética da marca (preto, branco, prata)
+   ============================================================ */
+
+:root {
+  --preto: #111111;
+  --branco: #ffffff;
+  --prata: #c9c9c9;
+  --cinza: #6b6b6b;
+  --alerta: #e74c3c;
+  --alerta-suave: #fdeaec;
+  --serif: 'Didot', 'Playfair Display', Georgia, serif;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: 'Helvetica Neue', Arial, sans-serif;
+  color: var(--preto);
+  background: var(--branco);
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------- Header ---------- */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 28px;
+  border-bottom: 1px solid var(--prata);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo {
+  width: 34px;
+  height: 34px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 1px solid var(--prata);
+}
+
+.brand h1 {
+  margin: 0;
+  font-family: var(--serif);
+  letter-spacing: 6px;
+  font-size: 22px;
+  font-weight: 400;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--cinza);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.ponto {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #2ecc71;
+}
+
+.ponto.offline { background: var(--alerta); }
+
+/* ---------- Main ---------- */
+main {
+  flex: 1;
+  max-width: 1080px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 28px;
+}
+
+.filtros {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.btn {
+  padding: 9px 18px;
+  border: 1px solid var(--preto);
+  background: transparent;
+  color: var(--preto);
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background: var(--preto);
+  color: var(--branco);
+}
+
+select {
+  padding: 9px 12px;
+  border: 1px solid var(--prata);
+  background: var(--branco);
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+/* ---------- Grid ---------- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+/* ---------- Card ---------- */
+.card {
+  border: 1px solid var(--prata);
+  padding: 20px;
+  transition: box-shadow .2s;
+}
+
+.card:hover { box-shadow: 0 8px 24px rgba(0, 0, 0, .08); }
+
+.card-alerta {
+  border-color: var(--alerta);
+  background: var(--alerta-suave);
+}
+
+.card-topo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.card h3 {
+  font-family: var(--serif);
+  font-weight: 400;
+  margin: 0 0 4px;
+}
+
+.card .meta {
+  font-size: 12px;
+  color: var(--cinza);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0 0 12px;
+}
+
+.card .valor {
+  font-family: var(--serif);
+  font-size: 28px;
+}
+
+.card-alerta .valor { color: var(--alerta); }
+
+.chip {
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+}
+
+.chip.critico { color: var(--alerta); }
+.chip.normal { color: var(--cinza); }
+
+/* ---------- Footer ---------- */
+footer {
+  padding: 18px;
+  text-align: center;
+  font-size: 12px;
+  color: var(--cinza);
+  border-top: 1px solid var(--prata);
+}
+
+footer p { margin: 3px 0; }
+
+/* ---------- Responsivo ---------- */
+@media (max-width: 900px) {
+  .grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 620px) {
+  .grid { grid-template-columns: 1fr; }
+  header { flex-direction: column; gap: 10px; align-items: flex-start; }
+}

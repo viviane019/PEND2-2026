@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dior · Sensores</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="brand">
+            <img src="Dior.jpg" alt="Dior" class="logo">
+            <h1>DIOR</h1>
+        </div>
+        <div class="status" id="statusConexao">
+            <span class="ponto" id="pontoStatus"></span>
+            <span id="textoStatus">Online</span>
+        </div>
+    </header>
+
+    <main>
+        <section class="filtros">
+            <button id="btnAtualizar" class="btn">Atualizar</button>
+            <select id="filtroTipo">
+                <option value="Todos">Todos</option>
+                <option value="Temperatura">Temperatura</option>
+                <option value="Umidade">Umidade</option>
+                <option value="Pressão">Pressão</option>
+            </select>
+        </section>
+
+        <section class="grid" id="gridSensores"></section>
+    </main>
+
+    <footer>
+        <p>&copy; <span id="ano"></span> Dior</p>
+      
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
