@@ -1,0 +1,9 @@
+section {
+    background-color: lightgray;
+}
+
+app-card 
+app-carousel
+app-footer {
+    display: block;
+}
